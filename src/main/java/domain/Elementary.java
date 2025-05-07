@@ -10,8 +10,14 @@ package domain;
  * @author Profesor Lic. Gilberth Chaves A.
  */
 public class Elementary {
+    private static int TotalChanges;
+    private static int TotalIterations;
+
     public static void bubbleSort(int a[]){
-        for(int i=1;i<a.length;i++)
+        TotalIterations=0;
+        TotalChanges=0;
+        for(int i=1;i<a.length;i++){
+            TotalIterations++;
             for(int j=0;j<a.length-i;j++){
                 if(a[j]>a[j+1]){
                     int aux=a[j];
@@ -19,6 +25,7 @@ public class Elementary {
                     a[j+1]=aux;
                 }//if
             }//for j
+        }
     }
     
     public static void improvedBubbleSort(int a[]){
