@@ -10,7 +10,7 @@ package domain;
  * @author Profesor Lic. Gilberth Chaves A.
  */
 public class Elementary {
-    public void bubbleSort(int a[]){
+    public static void bubbleSort(int a[]){
         for(int i=1;i<a.length;i++)
             for(int j=0;j<a.length-i;j++){
                 if(a[j]>a[j+1]){
@@ -21,7 +21,7 @@ public class Elementary {
             }//for j
     }
     
-    public void improvedBubbleSort(int a[]){
+    public static void improvedBubbleSort(int a[]){
 	    boolean swapped = true; //intercambiado
 	    for(int i=1;swapped;i++){
             swapped = false;
@@ -36,7 +36,7 @@ public class Elementary {
 	    }//for i
     }
     
-    public void selectionSort(int a[]){
+    public static void selectionSort(int a[]){
         for(int i=0;i<a.length-1;i++){
             int min=a[i];
             int minIndex=i;
@@ -51,7 +51,7 @@ public class Elementary {
         }//for i
     }
     
-    public void countingSort(int a[]) {
+    public static void countingSort(int a[]) {
         int max = util.Utility.maxArray(a); //va de 0 hasta el elemento maximo
         // create buckets
         int counter[] = new int[max + 1];

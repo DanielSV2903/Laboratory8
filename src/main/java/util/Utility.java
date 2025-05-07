@@ -118,6 +118,15 @@ import java.util.*;
             LocalDate now=LocalDate.now();
             return Period.between(birth,now).getYears();
         }
+        public static int maxArray(int[] a) {
+            int max = a[0]; //first element
+            for (int i = 1; i < a.length; i++) {
+                if(a[i]>max){
+                    max=a[i];
+                }
+            }
+            return max;
+        }
 
         public static boolean validarEntradasEmployee(TextField lastnameTextField, TextField firstnameTextField, TextField idTextField, DatePicker birthdayDatePicker, TextField titleTextField) {
 //        //Validar nombre: solo letras y espacios

@@ -12,9 +12,9 @@ import java.util.Random;
  * @author Profesor Gilberth Chaves A <gchavesav@ucr.ac.cr>
  */
 public class Complex {
-    private int counterRadix[];
+    private static int counterRadix[];
 
-    public void quickSort(int arr[], int low, int high){
+    public static void quickSort(int arr[], int low, int high){
         int i=low;
         int j=high;
         int pivot=arr[(low+high)/2];
@@ -33,7 +33,7 @@ public class Complex {
         if(i<high) quickSort(arr,i,high);
     }
 
-    public void radixSort(int a[], int n){ 
+    public static void radixSort(int a[], int n){
         // Find the maximum number to know number of digits 
         int m = util.Utility.maxArray(a); //va de 0 hasta el elemento maximo
   
@@ -46,7 +46,7 @@ public class Complex {
 
     // A function to do counting sort of a[] according to
     // the digit represented by exp. 
-    private void countSort(int a[], int n, int exp){ 
+    private static void countSort(int a[], int n, int exp){
         int output[] = new int[n]; // output array 
         int i; 
         int count[] = new int[10];
@@ -76,7 +76,7 @@ public class Complex {
         counterRadix=count;
     }
     
-    public void mergeSort(int a[], int tmp[], int low, int high){
+    public static void mergeSort(int a[], int tmp[], int low, int high){
         if(low<high){
             int center = (low+high)/2;
             mergeSort(a,tmp,low,center );
@@ -85,7 +85,7 @@ public class Complex {
         }//if
     }
         
-    private void merge(int a[], int tmp[], int lowIndex, int highIndex, int endIndex){ 
+    private static void merge(int a[], int tmp[], int lowIndex, int highIndex, int endIndex){
 	int leftEnd = highIndex - 1; 
 	int tmpPos = lowIndex; 
 	int numElements = endIndex - lowIndex + 1; 
@@ -106,7 +106,7 @@ public class Complex {
             a[endIndex] = tmp[endIndex]; 
     }
 
-    public void shellSort(int a[]) { 
+    public static void shellSort(int a[]) {
         int n = a.length; 
         // Start with a big gap, then reduce the gap 
         for (int gap = n/2; gap > 0; gap /= 2){
