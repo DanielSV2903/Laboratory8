@@ -14,7 +14,10 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
 
     public class Utility {
         private static  Random random;
@@ -29,10 +32,10 @@ import java.util.*;
             //return (int)Math.floor(Math.random()*bound); //forma 1
             return 1+random.nextInt(bound);
         }
-        public static int random(int bound1,int bound2){
-            //return (int)Math.floor(Math.random()*bound); //forma 1
-            return 1+random.nextInt(bound1,bound2);
-        }
+//        public static int random(int bound1,int bound2){
+//            //return (int)Math.floor(Math.random()*bound); //forma 1
+//            return 1+random.nextInt(bound1,bound2);
+//        }
 
         public static void fill(int[] a) {
             for (int i = 0; i < a.length; i++) {
@@ -396,14 +399,14 @@ import java.util.*;
             }
             return selectedIndex;
         }
-        private static String priorityString(int priority){
-            return switch (priority) {
-                case 1 -> "low";
-                case 2 -> "medium";
-                case 3 -> "high";
-                default -> " ";
-            };
-        }
+//        private static String priorityString(int priority){
+//            return switch (priority) {
+//                case 1 -> "low";
+//                case 2 -> "medium";
+//                case 3 -> "high";
+//                default -> " ";
+//            };
+//        }
 
         public static String generateRandomName() {
             String[] names = {
@@ -424,6 +427,23 @@ import java.util.*;
         public static String getRandomPriority() {
             String[] priorities = {"high", "medium", "low"};
             return priorities[random(priorities.length)-1];
+        }
+
+        public static int[] getIntegerArray(int i) {
+            int [] array =new int[i];
+            int length=array.length;
+            for (int j=0;j<length;j++){
+                array[j]=random(9999);
+            }
+            return array;
+        }
+
+        public static int[] copyArray(int[] a) {
+            int length=a.length;
+            int[] copy=new int[length];
+            for (int i=0;i<length;i++)
+                copy[i]=a[i];
+            return copy;
         }
     }
 //    private ObservableList<List<String>> getEmployeeList() {

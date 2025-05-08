@@ -7,7 +7,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
-import ucr.lab.HelloApplication;
+import ucr.laboratory8.HelloApplication;
 
 import java.io.IOException;
 

@@ -5,7 +5,9 @@
  */
 package domain;
 
-import java.util.Random;
+import util.Utility;
+
+import java.util.List;
 
 /**
  *
@@ -13,6 +15,35 @@ import java.util.Random;
  */
 public class Complex {
     private static int counterRadix[];
+
+    public static int[] getCounterRadix() {
+        return counterRadix;
+    }
+
+    public int[] getPivot() {
+        return pivot;
+    }
+
+    public int[] getLow() {
+        return low;
+    }
+
+    public int[] getHigh() {
+        return high;
+    }
+
+    private int[] pivot;
+    private int[] low;
+    private int[] high;
+
+    public static List<int[]> getGapsList() {
+        return gapsList;
+    }
+
+    private static List<int[]> gapsList;
+    public static int[] getCounterArray() {
+        return counterRadix;
+    }
 
     public static void quickSort(int arr[], int low, int high){
         int i=low;
@@ -34,7 +65,7 @@ public class Complex {
     }
 
     public static void radixSort(int a[], int n){
-        // Find the maximum number to know number of digits 
+        // Find the maximum number to know number of digits
         int m = util.Utility.maxArray(a); //va de 0 hasta el elemento maximo
   
         // Do counting sort for every digit. Note that instead 
@@ -61,8 +92,9 @@ public class Complex {
         for (i = 1; i < 10; i++) {
             count[i] += count[i - 1];
         }
-  
-        // Build the output array 
+        counterRadix= Utility.copyArray(count);
+
+        // Build the output array
         for (i = n - 1; i >= 0; i--) {
             output[count[ (a[i]/exp)%10 ] - 1] = a[i]; 
             count[ (a[i]/exp)%10 ]--;
@@ -73,7 +105,7 @@ public class Complex {
         for (i = 0; i < n; i++) 
             a[i] = output[i];
 
-        counterRadix=count;
+
     }
     
     public static void mergeSort(int a[], int tmp[], int low, int high){
@@ -120,17 +152,28 @@ public class Complex {
                 // sorted save a[i] in temp and make a hole at 
                 // position i 
                 int temp = a[i];
-
-                // shift earlier gap-sorted elements up until 
-                // the correct location for a[i] is found 
+                while (x<4){
+                    int [] tempArray=new int[gap];
+                    for (int k=0;k<gap;k++){
+                        if (k < n) {
+                            tempArray[k]=a[k];
+                        } else {
+                            break;
+                        }
+                    }
+                    gapsList.add(tempArray);
+                    x++;
+                }
+                // shift earlier gap-sorted elements up until
+                // the correct location for a[i] is found
                 int j;
-                for (j = i; j >= gap && a[j - gap] > temp; j -= gap) 
-                    a[j] = a[j - gap]; 
-  
+                for (j = i; j >= gap && a[j - gap] > temp; j -= gap)
+                    a[j] = a[j - gap];
+
                 // put temp (the original a[i]) in its correct 
                 // location 
                 a[j] = temp; 
-            } 
+            }
         } 
     }
 
