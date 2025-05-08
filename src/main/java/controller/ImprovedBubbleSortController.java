@@ -1,0 +1,39 @@
+package controller;
+
+import javafx.scene.control.TextField;
+
+import java.awt.event.ActionEvent;
+
+public class ImprovedBubbleSortController
+{
+    @javafx.fxml.FXML
+    private TextField arrayLengthTextField;
+    @javafx.fxml.FXML
+    private TextField lowBoundTextField;
+    @javafx.fxml.FXML
+    private TextField highBoundTextFIeld;
+    @javafx.fxml.FXML
+    private TextField changesTextField;
+    @javafx.fxml.FXML
+    private TextField iterationsTextField;
+
+    @javafx.fxml.FXML
+    public void initialize() {
+    }
+
+    @javafx.fxml.FXML
+    public void startOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void clearOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void randomizeOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void createButtonOnAction(ActionEvent actionEvent) {
+    }
+}
