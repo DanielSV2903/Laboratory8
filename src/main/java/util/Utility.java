@@ -219,11 +219,11 @@ import java.util.Random;
             return copy;
         }
 
-        public static int[] createArray(String lengthText, String lowBoundText, String highBoundText) {
-            int[] array=new int[Integer.parseInt(lengthText)];
+        public static int[] createArray(int lengthText, int lowBoundText, int highBoundText) {
+            int[] array=new int[lengthText];
             int length=array.length;
             for (int j=0;j<length;j++){
-                array[j]=random(Integer.parseInt(lowBoundText),Integer.parseInt(highBoundText));
+                array[j]=random(lowBoundText,highBoundText);
             }
             return array;
         }
