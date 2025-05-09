@@ -42,7 +42,7 @@ class ComplexTest {
         }
         result.append("\nSorted Array: "+arrayToString(a,n));
         if (algorithm.equals("radixSort")){
-            result.append("\nCounter Array: "+arrayToString(Complex.getCounterArray(),Complex.getCounterArray().length));
+            result.append("\nCounter Array: "+arrayToString(Complex.getCounterRadix(),Complex.getCounterRadix().length));
         }
         if (algorithm.equals("shellSort")){
             result.append("\nGap (n/2) subArray1"+arrayToString(Complex.getGapsList().get(0),150));
@@ -51,7 +51,6 @@ class ComplexTest {
         }
         return result.toString();
     }
-
     private String arrayToString(int[] a,int n) {
         StringBuilder builder=new StringBuilder();
         builder.append("{");

@@ -227,4 +227,13 @@ import java.util.Random;
             }
             return array;
         }
+        public static String arrayToString(int[] a,int n) {
+            StringBuilder builder=new StringBuilder();
+            builder.append("{");
+            for (int i=0;i<n;i++){
+                builder.append(a[i]+",");
+            }
+            builder.append("}");
+            return builder.toString();
+        }
     }

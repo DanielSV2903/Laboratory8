@@ -40,14 +40,17 @@ public class Complex {
     public static List<int[]> getGapsList() {
         return gapsList;
     }
+    private static List<Integer> gapValues;
+
+    public static List<Integer> getGapValues() {
+        return gapValues;
+    }
 
     private static List<int[]> gapsList;
-    public static int[] getCounterArray() {
-        return counterRadix;
-    }
 
     static {
         gapsList = new ArrayList<>();
+        gapValues = new ArrayList<>();
     }
 
     public static void quickSort(int arr[], int low, int high){
@@ -148,6 +151,7 @@ public class Complex {
         int x=0;
         // Start with a big gap, then reduce the gap 
         for (int gap = n/2; gap > 0; gap /= 2){
+            gapValues.add(gap);
                 // Do a gapped insertion sort for this gap size.
             // The first gap elements a[0..gap-1] are already 
             // in gapped order keep adding one more element 

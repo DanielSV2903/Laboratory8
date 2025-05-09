@@ -25,11 +25,11 @@ public class CountingSortingController
     @javafx.fxml.FXML
     private TextField lowBoundTextField;
     @javafx.fxml.FXML
-    private TableView sortedArrayTableView;
+    private TableView<ObservableList<SimpleIntegerProperty>> sortedArrayTableView;
     @javafx.fxml.FXML
     private TableView<ObservableList<SimpleIntegerProperty>> noSortedArrayTableView;
     @javafx.fxml.FXML
-    private TableView counterArrayTableView;
+    private TableView<ObservableList<SimpleIntegerProperty>> counterArrayTableView;
     private int[] noSortedArray;
     private int[] sortedArray;
     @javafx.fxml.FXML
@@ -46,11 +46,9 @@ public class CountingSortingController
         Elementary.countingSort(sortedArray);
         int[] contador = Elementary.getCounterArray();
 
-        crearTV(noSortedArrayTableView, noSortedArray.length);
         crearTV(sortedArrayTableView, sortedArray.length);
         crearTV(counterArrayTableView, contador.length);
 
-        updateTV(noSortedArrayTableView, noSortedArray);
         updateTV(sortedArrayTableView, sortedArray);
         updateTV(counterArrayTableView, contador);
     }
@@ -108,18 +106,6 @@ public class CountingSortingController
     private boolean notEmpty() {
         return this.arrayLengthTextFIeld.getText().isEmpty() && this.lowBoundTextField.getText().isEmpty() && this.highBoundTextField.getText().isEmpty();
     }
-
-    private void updateTV(TableView<ObservableList<SimpleIntegerProperty>> tableView, int[] arreglo) {
-        tableView.getItems().clear();
-
-        ObservableList<SimpleIntegerProperty> fila = javafx.collections.FXCollections.observableArrayList();
-        for (int value : arreglo) {
-            fila.add(new SimpleIntegerProperty(value));
-        }
-
-        tableView.getItems().add(fila);
-    }
-
     private void mostrarAlerta(String mensaje) {
         alert.setTitle("Error de validación");
         alert.setHeaderText(null);
@@ -136,5 +122,15 @@ public class CountingSortingController
             column.setCellValueFactory(data -> data.getValue().get(colIndex));
             tableView.getColumns().add(column);
         }
+    }
+    private void updateTV(TableView<ObservableList<SimpleIntegerProperty>> tableView, int[] arreglo) {
+        tableView.getItems().clear();
+
+        ObservableList<SimpleIntegerProperty> fila = javafx.collections.FXCollections.observableArrayList();
+        for (int value : arreglo) {
+            fila.add(new SimpleIntegerProperty(value));
+        }
+
+        tableView.getItems().add(fila);
     }
 }
