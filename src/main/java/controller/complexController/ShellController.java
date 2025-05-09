@@ -43,14 +43,15 @@ public class ShellController
     @javafx.fxml.FXML
     public void initialize() {
         alert = new Alert(Alert.AlertType.INFORMATION);
-        gapsList = Complex.getGapsList();
     }
 
     @javafx.fxml.FXML
     public void startOnAction(ActionEvent actionEvent) {
+        this.gapsN2TF.clear();
         String gaps = "";
         Complex.shellSort(sortedArray);
         gapValues = Complex.getGapValues();
+        gapsList = Complex.getGapsList();
         for (Integer gapValue : gapValues) {
             gaps += (gapValue + ",");
         }
@@ -107,11 +108,18 @@ public class ShellController
         this.gapSubArray3TextField.clear();
         this.gapsN2TF.clear();
         gapValues.clear();
+        gapsList.clear();
     }
 
     @javafx.fxml.FXML
     public void randomizeOnAction(ActionEvent actionEvent) {
         this.sortedArrayTableVIew.getColumns().clear();
+        this.gapSubArray1TextField.clear();
+        this.gapSubArray2TextField.clear();
+        this.gapSubArray3TextField.clear();
+        this.gapsN2TF.clear();
+        if (gapsList!=null) {gapsList.clear();}
+        if (gapValues!=null) {gapValues.clear();}
         int lenght=Utility.random(150);
         int low=Utility.random(0,lenght);
         int high=Utility.random(low+1,lenght);
