@@ -1,6 +1,8 @@
 package controller.elementaryController;
 
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import util.Utility;
 
 import java.awt.event.ActionEvent;
 
@@ -35,6 +37,18 @@ public class BubbleSortController
 
     @javafx.fxml.FXML
     public void createButtonOnAction(javafx.event.ActionEvent actionEvent) {
+        if (!Utility.validarEntradasArray(arrayLengthTextField, lowBoundTextField, highBoundTextFIeld))
+            return;
+
+        mostrarAlerta("Valores ingresados correctamente");
+
+    }
+    private static void mostrarAlerta(String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle("Error de validación");
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
     }
 
     public void randomizeOnAction(javafx.event.ActionEvent actionEvent) {
