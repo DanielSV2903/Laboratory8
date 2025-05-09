@@ -26,15 +26,28 @@ class ComplexTest {
         result.append("\n"+algorithm +"- Test\n" +
                 "Algorithm: "+algorithm +"\n" +
                 "Original Array: ");
-        result.append(arrayToString(copyOf,copyOf.length));
+        switch(algorithm){
+            case "quickSort":
+                result.append(arrayToString(copyOf,30));
+                break;
+            case "radixSort":
+                result.append(arrayToString(copyOf,50));
+                break;
+            case "mergeSort":
+                result.append(arrayToString(copyOf,100));
+                break;
+            case "shellSort":
+                result.append(arrayToString(copyOf,150));
+                break;
+        }
         result.append("\nSorted Array: "+arrayToString(a,n));
         if (algorithm.equals("radixSort")){
-            result.append("\nCounter Array: "+arrayToString(Complex.getCounterArray(),n));
+            result.append("\nCounter Array: "+arrayToString(Complex.getCounterArray(),Complex.getCounterArray().length));
         }
         if (algorithm.equals("shellSort")){
-            result.append("\nGap (n/2) subArray1"+arrayToString(Complex.getGapsList().get(0),n));
-            result.append("\nGap (n/2) subArray2"+arrayToString(Complex.getGapsList().get(1),n));
-            result.append("\nGap (n/2) subArray3"+arrayToString(Complex.getGapsList().get(2),n));
+            result.append("\nGap (n/2) subArray1"+arrayToString(Complex.getGapsList().get(0),150));
+            result.append("\nGap (n/2) subArray2"+arrayToString(Complex.getGapsList().get(1),150));
+            result.append("\nGap (n/2) subArray3"+arrayToString(Complex.getGapsList().get(2),150));
         }
         return result.toString();
     }

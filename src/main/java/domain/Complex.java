@@ -7,6 +7,7 @@ package domain;
 
 import util.Utility;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -43,6 +44,10 @@ public class Complex {
     private static List<int[]> gapsList;
     public static int[] getCounterArray() {
         return counterRadix;
+    }
+
+    static {
+        gapsList = new ArrayList<>();
     }
 
     public static void quickSort(int arr[], int low, int high){
@@ -139,31 +144,24 @@ public class Complex {
     }
 
     public static void shellSort(int a[]) {
-        int n = a.length; 
+        int n = a.length;
+        int x=0;
         // Start with a big gap, then reduce the gap 
         for (int gap = n/2; gap > 0; gap /= 2){
                 // Do a gapped insertion sort for this gap size.
             // The first gap elements a[0..gap-1] are already 
             // in gapped order keep adding one more element 
             // until the entire array is gap sorted
-            int x=1;
+            if (x<3){
+                int[] copyOf = Utility.copyArray(a);
+                gapsList.add(copyOf);
+                x++;
+            }
             for (int i = gap; i < n; i += 1){
                 // add a[i] to the elements that have been gap
                 // sorted save a[i] in temp and make a hole at 
                 // position i 
                 int temp = a[i];
-                while (x<4){
-                    int [] tempArray=new int[gap];
-                    for (int k=0;k<gap;k++){
-                        if (k < n) {
-                            tempArray[k]=a[k];
-                        } else {
-                            break;
-                        }
-                    }
-                    gapsList.add(tempArray);
-                    x++;
-                }
                 // shift earlier gap-sorted elements up until
                 // the correct location for a[i] is found
                 int j;

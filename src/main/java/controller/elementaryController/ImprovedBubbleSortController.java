@@ -34,6 +34,15 @@ public class ImprovedBubbleSortController
     }
 
     @javafx.fxml.FXML
-    public void createButtonOnAction(ActionEvent actionEvent) {
+    public void createButtonOnAction(javafx.event.ActionEvent actionEvent) {
+    }
+
+    public void randomizeOnAction(javafx.event.ActionEvent actionEvent) {
+    }
+
+    public void startOnAction(javafx.event.ActionEvent actionEvent) {
+    }
+
+    public void clearOnAction(javafx.event.ActionEvent actionEvent) {
     }
 }

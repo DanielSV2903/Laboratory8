@@ -47,7 +47,7 @@ public class HelloController {
 
     @FXML
     void countingSortOnAction(ActionEvent event) {
-        loadPage("countingSort.fxml");
+        loadPage("countingSorting.fxml");
     }
 
     @FXML
@@ -72,7 +72,7 @@ public class HelloController {
 
     @FXML
     void selectionSortOnAction(ActionEvent event) {
-        loadPage("selectionSort.fxml");
+        loadPage("selectionSorting.fxml");
     }
 
     @FXML
