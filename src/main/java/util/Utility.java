@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Random;
 
     public class Utility {
-        private static  Random random;
+        private static Random random;
 
         //constructor estatico, inicializador estatico
         static {

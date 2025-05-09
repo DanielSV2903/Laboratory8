@@ -77,7 +77,7 @@ public class HelloController {
 
     @FXML
     void shellSortOnAction(ActionEvent event) {
-        loadPage("shellSort.fxml");
+        loadPage("shellAlgorithm.fxml");
     }
 
 }

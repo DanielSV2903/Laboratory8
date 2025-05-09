@@ -1,9 +1,13 @@
 package controller.elementaryController;
 
+import javafx.beans.Observable;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import util.Utility;
 
 public class SelectionSortingController
@@ -26,6 +30,12 @@ public class SelectionSortingController
     private TextField highBoundTextField;
     @javafx.fxml.FXML
     private TextField lowBoundTextField;
+    @javafx.fxml.FXML
+    private BorderPane bp;
+    @javafx.fxml.FXML
+    private ScrollPane scrollPaneNSA;
+    @javafx.fxml.FXML
+    private ScrollPane scrollPaneSA;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -39,6 +49,13 @@ public class SelectionSortingController
     public void createOnAction(ActionEvent actionEvent) {
         if (!Utility.validarEntradasArray(arrayLengthTextField, lowBoundTextField, highBoundTextField))
             return;
+        noSortedArrayTableVIew.getItems().clear();
+        noSortedArrayTableVIew.getColumns().clear();
+
+        for (int i = 0; i < Integer.parseInt(arrayLengthTextField.getText().trim()); i++) {
+            noSortedArrayTableVIew.getColumns().add(new javafx.scene.control.TableColumn<>("[" + i + "]"));
+            
+        }
 
         mostrarAlerta("Valores ingresados correctamente");
 

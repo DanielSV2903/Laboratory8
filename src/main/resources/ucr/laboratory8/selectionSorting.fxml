@@ -6,125 +6,130 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.elementaryController.SelectionSortingController">
-   <children>
-      <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #76d7c4;">
+<BorderPane fx:id="bp" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.elementaryController.SelectionSortingController">
+   <center>
+      <AnchorPane prefHeight="509.0" prefWidth="707.0">
          <children>
-            <Pane prefHeight="48.0" prefWidth="600.0" style="-fx-background-color: #eb984e;">
+            <Pane prefHeight="630.0" prefWidth="838.0" style="-fx-background-color: #76d7c4;">
                <children>
-                  <Text layoutX="154.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selection Sorting Algorithm">
+                  <Pane prefHeight="48.0" prefWidth="600.0" style="-fx-background-color: #eb984e;">
+                     <children>
+                        <Text layoutX="154.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selection Sorting Algorithm">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Text layoutX="54.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Array Length:">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="18.0" />
                      </font>
                   </Text>
-               </children>
-            </Pane>
-            <Text layoutX="54.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Array Length:">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
-            <Text layoutX="75.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(max: 200)">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <TextField fx:id="arrayLengthTextField" layoutX="169.0" layoutY="56.0" prefHeight="32.0" prefWidth="81.0" />
-            <Text layoutX="300.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Low bound:">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <TextField fx:id="lowBoundTextField" layoutX="383.0" layoutY="48.0" prefHeight="25.0" prefWidth="81.0" />
-            <TextField fx:id="highBoundTextField" layoutX="383.0" layoutY="71.0" prefHeight="25.0" prefWidth="81.0" />
-            <Text layoutX="298.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="High bound:">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Button layoutX="488.0" layoutY="53.0" mnemonicParsing="false" onAction="#createOnAction" prefHeight="41.0" prefWidth="81.0" text="Create">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="250.0" layoutY="359.0" mnemonicParsing="false" onAction="#randomizeOnAction" text="Randomize">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-            <Button layoutX="363.0" layoutY="359.0" mnemonicParsing="false" onAction="#clearOnAction" text="Clear">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-            <Button layoutX="182.0" layoutY="359.0" mnemonicParsing="false" onAction="#startOnAction" text="Start">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-            <Pane layoutX="-2.0" layoutY="100.0" prefHeight="253.0" prefWidth="600.0" style="-fx-background-color: #bb8fce;">
-               <children>
-                  <Text layoutX="244.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No sorted Array">
+                  <Text layoutX="75.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(max: 200)">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="arrayLengthTextField" layoutX="169.0" layoutY="56.0" prefHeight="32.0" prefWidth="81.0" />
+                  <Text layoutX="300.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Low bound:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="lowBoundTextField" layoutX="383.0" layoutY="48.0" prefHeight="25.0" prefWidth="81.0" />
+                  <TextField fx:id="highBoundTextField" layoutX="383.0" layoutY="71.0" prefHeight="25.0" prefWidth="81.0" />
+                  <Text layoutX="298.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="High bound:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="488.0" layoutY="53.0" mnemonicParsing="false" onAction="#createOnAction" prefHeight="39.0" prefWidth="149.0" text="Create">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="251.0" layoutY="546.0" mnemonicParsing="false" onAction="#randomizeOnAction" text="Randomize">
                      <font>
                         <Font size="16.0" />
                      </font>
-                  </Text>
-                  <Text layoutX="14.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min Value:">
+                  </Button>
+                  <Button layoutX="419.0" layoutY="546.0" mnemonicParsing="false" onAction="#clearOnAction" text="Clear">
                      <font>
                         <Font size="16.0" />
                      </font>
-                  </Text>
-                  <Text layoutX="12.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Value:">
+                  </Button>
+                  <Button layoutX="132.0" layoutY="546.0" mnemonicParsing="false" onAction="#startOnAction" text="Start">
                      <font>
                         <Font size="16.0" />
                      </font>
-                  </Text>
-                  <Text layoutX="300.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Iteration:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="300.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Changes:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="256.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sorted Array">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Text>
-                  <ScrollPane layoutY="174.0" prefHeight="74.0" prefWidth="600.0">
-                     <content>
-                        <TableView fx:id="sortedArrayTableView" prefHeight="81.0" prefWidth="600.0">
-                           <columns>
-                              <TableColumn prefWidth="75.0" text="C1" />
-                              <TableColumn prefWidth="75.0" text="C2" />
-                           </columns>
-                        </TableView>
-                     </content>
-                  </ScrollPane>
-                  <ScrollPane layoutX="6.0" layoutY="24.0" prefHeight="74.0" prefWidth="594.0">
-                     <content>
-                        <TableView fx:id="noSortedArrayTableVIew" prefHeight="81.0" prefWidth="600.0">
-                           <columns>
-                              <TableColumn prefWidth="75.0" text="C1" />
-                              <TableColumn prefWidth="75.0" text="C2" />
-                           </columns>
-                        </TableView>
-                     </content>
-                  </ScrollPane>
-                  <TextField fx:id="minValueTextField" editable="false" layoutX="95.0" layoutY="101.0" />
-                  <TextField fx:id="maxValueTextField" editable="false" layoutX="95.0" layoutY="126.0" />
-                  <TextField fx:id="iterationTextField" editable="false" layoutX="404.0" layoutY="101.0" />
-                  <TextField fx:id="changesTextField" editable="false" layoutX="404.0" layoutY="126.0" />
+                  </Button>
+                  <Pane layoutX="-2.0" layoutY="100.0" prefHeight="435.0" prefWidth="606.0" style="-fx-background-color: #bb8fce;">
+                     <children>
+                        <Text layoutX="244.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No sorted Array">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="16.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min Value:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="14.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Value:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="302.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Iteration:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="302.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Changes:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="256.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sorted Array">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <ScrollPane fx:id="scrollPaneSA" layoutX="3.0" layoutY="259.0" prefHeight="174.0" prefWidth="600.0">
+                           <content>
+                              <TableView fx:id="sortedArrayTableView" prefHeight="161.0" prefWidth="600.0">
+                                 <columns>
+                                    <TableColumn prefWidth="50.0" text="C1" />
+                                    <TableColumn prefWidth="55.0" text="C2" />
+                                 </columns>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane fx:id="scrollPaneNSA" layoutX="6.0" layoutY="24.0" prefHeight="150.0" prefWidth="594.0">
+                           <content>
+                              <TableView fx:id="noSortedArrayTableVIew" prefHeight="148.0" prefWidth="600.0">
+                                 <columns>
+                                    <TableColumn prefWidth="49.0" text="C1" />
+                                    <TableColumn prefWidth="52.0" text="C2" />
+                                 </columns>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                        <TextField fx:id="minValueTextField" editable="false" layoutX="97.0" layoutY="184.0" />
+                        <TextField fx:id="maxValueTextField" editable="false" layoutX="97.0" layoutY="209.0" />
+                        <TextField fx:id="iterationTextField" editable="false" layoutX="406.0" layoutY="184.0" />
+                        <TextField fx:id="changesTextField" editable="false" layoutX="406.0" layoutY="209.0" />
+                     </children>
+                  </Pane>
                </children>
             </Pane>
          </children>
-      </Pane>
-   </children>
-</AnchorPane>
+      </AnchorPane>
+   </center>
+</BorderPane>
