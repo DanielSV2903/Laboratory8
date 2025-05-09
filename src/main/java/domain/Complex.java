@@ -68,20 +68,28 @@ public class Complex {
     }
 
     // QuickSort modificado para guardar los pivots
-    public static void quickSort(int arr[], int low, int high, int index) {
+    public static void quickSort(int arr[], int low, int high, int pivotIndex, int lowIndex, int highIndex) {
         if (low < high) {
             int i = low;
             int j = high;
             int pivot = arr[(low + high) / 2];
-        
-            // Guardar el pivot en pivotArray
-            pivotArray[index] = pivot;
-            lowArray[index] = low;
-            highArray[index] = high;
+
+            pivotArray[pivotIndex] = pivot;
+            lowArray[lowIndex] = low;
+            highArray[highIndex] = high;
             RecursiveCount++;
+
             do {
-                while (arr[i] < pivot) i++;
-                while (arr[j] > pivot) j--;
+                while (arr[i] < pivot) {
+                    i++;
+                }
+                while (arr[j] > pivot) {
+                    j--;
+                }
+                lowIndex++;
+                lowArray[lowIndex]=i;
+                highIndex++;
+                highArray[highIndex]=j;
                 if (i <= j) {
                     int aux = arr[i];
                     arr[i] = arr[j];
@@ -91,36 +99,36 @@ public class Complex {
                 }
             } while (i <= j);
 
-            if (low < j) quickSort(arr, low, j, index + 1);
-            if (i < high) quickSort(arr, i, high, index + 1);
+            if (low < j) quickSort(arr, low, j, pivotIndex + 1, lowIndex+1, highIndex+1);
+            if (i < high) quickSort(arr, i, high, pivotIndex + 1, lowIndex+1, highIndex+1);
         }
     }
 
     public static void radixSort(int a[], int n){
         // Find the maximum number to know number of digits
         int m = util.Utility.maxArray(a); //va de 0 hasta el elemento maximo
-  
-        // Do counting sort for every digit. Note that instead 
-        // of passing digit number, exp is passed. exp is 10^i 
-        // where i is current digit number 
-        for (int exp = 1; m/exp > 0; exp *= 10) 
-            countSort(a, n, exp); 
+
+        // Do counting sort for every digit. Note that instead
+        // of passing digit number, exp is passed. exp is 10^i
+        // where i is current digit number
+        for (int exp = 1; m/exp > 0; exp *= 10)
+            countSort(a, n, exp);
     }
 
     // A function to do counting sort of a[] according to
-    // the digit represented by exp. 
+    // the digit represented by exp.
     private static void countSort(int a[], int n, int exp){
-        int output[] = new int[n]; // output array 
-        int i; 
+        int output[] = new int[n]; // output array
+        int i;
         int count[] = new int[10];
 
-        // Store count of occurrences in count[] 
+        // Store count of occurrences in count[]
         for (i = 0; i < n; i++) {
             count[(a[i] / exp) % 10]++;
         }
-  
-        // Change count[i] so that count[i] now contains 
-        // actual position of this digit in output[] 
+
+        // Change count[i] so that count[i] now contains
+        // actual position of this digit in output[]
         for (i = 1; i < 10; i++) {
             count[i] += count[i - 1];
         }
@@ -128,32 +136,39 @@ public class Complex {
 
         // Build the output array
         for (i = n - 1; i >= 0; i--) {
-            output[count[ (a[i]/exp)%10 ] - 1] = a[i]; 
+            output[count[ (a[i]/exp)%10 ] - 1] = a[i];
             count[ (a[i]/exp)%10 ]--;
         }
-  
-        // Copy the output array to a[], so that a[] now 
-        // contains sorted numbers according to curent digit 
-        for (i = 0; i < n; i++) 
+
+        // Copy the output array to a[], so that a[] now
+        // contains sorted numbers according to curent digit
+        for (i = 0; i < n; i++)
             a[i] = output[i];
 
 
     }
-    
+
     public static void mergeSort(int a[], int tmp[], int low, int high, int index){
+
+        lowArray[index] = low;
+        highArray[index] = high;
+
+        RecursiveCount++;
         if(low<high){
+
             int center = (low+high)/2;
+
             mergeSort(a,tmp,low,center, index+1);
             mergeSort(a,tmp,center+1,high, index+1);
             merge(a,tmp,low,center+1,high);
         }//if
     }
-        
+
     private static void merge(int a[], int tmp[], int lowIndex, int highIndex, int endIndex){
-	int leftEnd = highIndex - 1; 
-	int tmpPos = lowIndex; 
-	int numElements = endIndex - lowIndex + 1; 
-	while( lowIndex <= leftEnd && highIndex <= endIndex ) 
+	int leftEnd = highIndex - 1;
+	int tmpPos = lowIndex;
+	int numElements = endIndex - lowIndex + 1;
+	while( lowIndex <= leftEnd && highIndex <= endIndex )
             if(a[lowIndex]<=a[highIndex]) {
                 tmp[tmpPos++] = a[lowIndex++];
             }
@@ -166,16 +181,15 @@ public class Complex {
 	while( highIndex <= endIndex ) {
         tmp[tmpPos++] = a[highIndex++];
     }
-	for( int i=0;i<numElements;i++,endIndex--) 
-            a[endIndex] = tmp[endIndex]; 
+	for( int i=0;i<numElements;i++,endIndex--)
+            a[endIndex] = tmp[endIndex];
     }
 
     public static void shellSort(int a[]) {
         int n = a.length;
         int x=0;
-        // Start with a big gap, then reduce the gap 
+        // Start with a big gap, then reduce the gap
         for (int gap = n/2; gap > 0; gap /= 2){
-            gapValues.add(gap);
                 // Do a gapped insertion sort for this gap size.
             // The first gap elements a[0..gap-1] are already 
             // in gapped order keep adding one more element 

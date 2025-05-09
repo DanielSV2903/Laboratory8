@@ -47,7 +47,7 @@
             </Text>
             <TextField fx:id="lowBoundTextField" layoutX="339.0" layoutY="52.0" prefHeight="25.0" prefWidth="104.0" />
             <TextField fx:id="highBoundTextField" layoutX="339.0" layoutY="80.0" prefHeight="25.0" prefWidth="104.0" />
-            <Button layoutX="462.0" layoutY="58.0" mnemonicParsing="false" onAction="#createOnAction" text="Create">
+            <Button layoutX="455.0" layoutY="56.0" mnemonicParsing="false" onAction="#createOnAction" prefHeight="39.0" prefWidth="143.0" text="Create">
                <font>
                   <Font size="18.0" />
                </font>

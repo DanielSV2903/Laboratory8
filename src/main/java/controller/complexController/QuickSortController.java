@@ -72,7 +72,7 @@ public class QuickSortController
         updateTV(noSortedArrayTableVIew, noSortedArray);
 
         Complex.initArrays(noSortedArray.length);
-        Complex.quickSort(sortedArray, 0, noSortedArray.length-1, 0);
+        Complex.quickSort(sortedArray, 0, noSortedArray.length-1, 0, 0, 0);
 
         mostrarAlerta("Valores ingresados correctamente");
 
@@ -116,7 +116,7 @@ public class QuickSortController
         updateTV(noSortedArrayTableVIew, noSortedArray);
 
         Complex.initArrays(noSortedArray.length);
-        Complex.quickSort(sortedArray, 0, noSortedArray.length-1, 0);
+        Complex.quickSort(sortedArray, 0, noSortedArray.length-1, 0, 0, 0);
     }
 
     private void crearTV(TableView<ObservableList<SimpleIntegerProperty>> tableView, int length) {
