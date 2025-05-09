@@ -36,17 +36,17 @@
                   <Font name="Arial" size="30.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="72.0" mnemonicParsing="false" onAction="#quickSortOnAction" prefHeight="62.0" prefWidth="323.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="QuickSortController" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="72.0" mnemonicParsing="false" onAction="#quickSortOnAction" prefHeight="62.0" prefWidth="323.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="QuickSort" textFill="WHITE">
                <font>
                   <Font name="Arial" size="30.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="260.0" mnemonicParsing="false" onAction="#radixSortOnAction" prefHeight="62.0" prefWidth="317.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="RadixSortController" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="260.0" mnemonicParsing="false" onAction="#radixSortOnAction" prefHeight="62.0" prefWidth="317.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="RadixSort" textFill="WHITE">
                <font>
                   <Font name="Arial" size="30.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="322.0" mnemonicParsing="false" onAction="#mergeSortOnAction" prefHeight="62.0" prefWidth="323.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="MergeSortController" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="322.0" mnemonicParsing="false" onAction="#mergeSortOnAction" prefHeight="62.0" prefWidth="323.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="MergeSort" textFill="WHITE">
                <font>
                   <Font name="Arial" size="30.0" />
                </font>
