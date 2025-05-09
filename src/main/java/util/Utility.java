@@ -206,6 +206,39 @@ import java.util.Random;
             return true;
         }
 
+        public static boolean validarEntradasArray(TextField lengthField, TextField lowField, TextField highField) {
+
+            String lengthText = lengthField.getText().trim();
+            try {
+                int length = Integer.parseInt(lengthText);
+                if (length <= 0 || length > 200) {
+                    mostrarAlerta("La longitud del arreglo debe estar entre 1 y 200.");
+                    return false;
+                }
+            } catch (NumberFormatException e) {
+                mostrarAlerta("La longitud del arreglo debe ser un número entero.");
+                return false;
+            }
+
+            String lowText = lowField.getText().trim();
+            String highText = highField.getText().trim();
+            try {
+                int low = Integer.parseInt(lowText);
+                int high = Integer.parseInt(highText);
+
+                if (low > high) {
+                    mostrarAlerta("El límite inferior no puede ser mayor que el límite superior.");
+                    return false;
+                }
+            } catch (NumberFormatException e) {
+                mostrarAlerta("Los límites deben ser números enteros válidos.");
+                return false;
+            }
+
+            return true;
+        }
+
+
 
 
         private static Object determinarLetra(int value) {
