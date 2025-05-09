@@ -44,16 +44,16 @@ public class ShellController
     public void initialize() {
         alert = new Alert(Alert.AlertType.INFORMATION);
         gapsList = Complex.getGapsList();
-        gapValues = Complex.getGapValues();
     }
 
     @javafx.fxml.FXML
     public void startOnAction(ActionEvent actionEvent) {
         String gaps = "";
+        Complex.shellSort(sortedArray);
+        gapValues = Complex.getGapValues();
         for (Integer gapValue : gapValues) {
             gaps += (gapValue + ",");
         }
-        Complex.shellSort(sortedArray);
         crearTV(sortedArrayTableVIew,sortedArray.length);
         updateTV(sortedArrayTableVIew,sortedArray);
         String gap1 =Utility.arrayToString(gapsList.get(0),gapsList.get(0).length);
@@ -106,6 +106,7 @@ public class ShellController
         this.gapSubArray2TextField.clear();
         this.gapSubArray3TextField.clear();
         this.gapsN2TF.clear();
+        gapValues.clear();
     }
 
     @javafx.fxml.FXML

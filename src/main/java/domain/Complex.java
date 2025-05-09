@@ -48,8 +48,15 @@ public class Complex {
     }
     public static int getRecursiveCount() {return RecursiveCount;}
 
+    public static List<Integer> getGapValues() {
+        return gapValues;
+    }
+
+    private static List<Integer> gapValues;
+
     static {
         gapsList = new ArrayList<>();
+        gapValues = new ArrayList<>();
     }
 
     // Método para inicializar los arreglos pivotArray
@@ -168,6 +175,7 @@ public class Complex {
         int x=0;
         // Start with a big gap, then reduce the gap 
         for (int gap = n/2; gap > 0; gap /= 2){
+            gapValues.add(gap);
                 // Do a gapped insertion sort for this gap size.
             // The first gap elements a[0..gap-1] are already 
             // in gapped order keep adding one more element 
