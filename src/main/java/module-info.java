@@ -10,4 +10,8 @@ module ucr.laboratory8 {
     opens controller to javafx.fxml;
     opens domain to javafx.fxml;
     exports domain;
+    exports controller.elementaryController;
+    opens controller.elementaryController to javafx.fxml;
+    exports controller.complexController;
+    opens controller.complexController to javafx.fxml;
 }

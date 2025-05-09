@@ -1,17 +1,23 @@
-package controller;
+package controller.complexController;
 
-public class SelectionSortingController
+import javafx.event.ActionEvent;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+
+public class RadixSortController
 {
-    @javafx.fxml.FXML
-    private TextField minValueTextField;
-    @javafx.fxml.FXML
-    private TextField iterationTextField;
-    @javafx.fxml.FXML
-    private TextField changesTextField;
     @javafx.fxml.FXML
     private TextField arrayLengthTextField;
     @javafx.fxml.FXML
-    private TextField maxValueTextField;
+    private TableView sortedArrayTableView;
+    @javafx.fxml.FXML
+    private TextField highBoundTextField;
+    @javafx.fxml.FXML
+    private TableView noSortedArrayTableView;
+    @javafx.fxml.FXML
+    private TextField lowBoundTextField;
+    @javafx.fxml.FXML
+    private TableView counterArrayTableView;
 
     @javafx.fxml.FXML
     public void initialize() {

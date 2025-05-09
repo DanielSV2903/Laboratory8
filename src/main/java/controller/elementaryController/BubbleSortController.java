@@ -1,10 +1,10 @@
-package controller;
+package controller.elementaryController;
 
 import javafx.scene.control.TextField;
 
 import java.awt.event.ActionEvent;
 
-public class ImprovedBubbleSortController
+public class BubbleSortController
 {
     @javafx.fxml.FXML
     private TextField arrayLengthTextField;
