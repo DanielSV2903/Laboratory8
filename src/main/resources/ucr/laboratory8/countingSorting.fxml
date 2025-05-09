@@ -97,7 +97,7 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="250.0" layoutY="501.0" mnemonicParsing="false" onAction="#startOnAction" prefHeight="41.0" prefWidth="98.0" text="Start">
+                  <Button layoutX="250.0" layoutY="501.0" mnemonicParsing="false" onAction="#startOnAction" prefHeight="41.0" prefWidth="98.0" text="Sort">
                      <font>
                         <Font size="14.0" />
                      </font>
