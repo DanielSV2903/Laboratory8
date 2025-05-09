@@ -51,7 +51,11 @@ public class SelectionSortingController
         noSortedArrayTableVIew.getItems().clear();
         noSortedArrayTableVIew.getColumns().clear();
 
-        int [] noSortedArray = Utility.createArray(arrayLengthTextField.getText().trim(),lowBoundTextField.getText().trim(),highBoundTextField.getText().trim());
+        int lengthText = Integer.parseInt(arrayLengthTextField.getText());
+        int lowBoundText = Integer.parseInt(lowBoundTextField.getText());
+        int highBoundText = Integer.parseInt(highBoundTextField.getText());
+
+        int [] noSortedArray = Utility.createArray(lengthText,lowBoundText,highBoundText);
         int [] sortedArray = Utility.copyArray(noSortedArray);
 
         crearTV(noSortedArrayTableVIew, noSortedArray.length);
@@ -96,7 +100,7 @@ public class SelectionSortingController
         int lowBound = Utility.random(0, 50);
         int highBound = Utility.random(lowBound+1, 100);
 
-        int[] noSortedArray = Utility.createArray(String.valueOf(arrayLength),String.valueOf(lowBound),String.valueOf(highBound));
+        int[] noSortedArray = Utility.createArray(arrayLength,lowBound,highBound);
         int[] sortedArray = Utility.copyArray(noSortedArray);
 
         crearTV(noSortedArrayTableVIew, noSortedArray.length);
