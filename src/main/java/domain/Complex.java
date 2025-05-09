@@ -21,21 +21,22 @@ public class Complex {
         return counterRadix;
     }
 
-    public int[] getPivot() {
-        return pivot;
+    public static int[] getPivotArray() {
+        return pivotArray;
     }
 
-    public int[] getLow() {
-        return low;
+    public static int[] getLowArray() {
+        return lowArray;
     }
 
-    public int[] getHigh() {
-        return high;
+    public static int[] getHighArray() {
+        return highArray;
     }
 
-    private int[] pivot;
-    private int[] low;
-    private int[] high;
+    private static int[] pivotArray;
+    private static int[] lowArray;
+    private static int[] highArray;
+    private static int RecursiveCount;
 
     public static List<int[]> getGapsList() {
         return gapsList;
@@ -45,28 +46,47 @@ public class Complex {
     public static int[] getCounterArray() {
         return counterRadix;
     }
+    public static int getRecursiveCount() {return RecursiveCount;}
 
     static {
         gapsList = new ArrayList<>();
     }
 
-    public static void quickSort(int arr[], int low, int high){
-        int i=low;
-        int j=high;
-        int pivot=arr[(low+high)/2];
-        do{
-            while(arr[i]<pivot) i++;
-            while(arr[j]>pivot) j--;
-            if(i<=j){
-                int aux=arr[i];
-                arr[i]=arr[j];
-                arr[j]=aux;
-                i++;j--;
-            }//if
-        }while(i<=j);//do
+    // Método para inicializar los arreglos pivotArray
+    public static void initArrays(int size) {
+        pivotArray = new int[size];
+        lowArray = new int[size];
+        highArray = new int[size];
+        RecursiveCount = 0;
+    }
 
-        if(low<j) quickSort(arr,low,j);
-        if(i<high) quickSort(arr,i,high);
+    // QuickSort modificado para guardar los pivots
+    public static void quickSort(int arr[], int low, int high, int index) {
+        if (low < high) {
+            int i = low;
+            int j = high;
+            int pivot = arr[(low + high) / 2];
+        
+            // Guardar el pivot en pivotArray
+            pivotArray[index] = pivot;
+            lowArray[index] = low;
+            highArray[index] = high;
+            RecursiveCount++;
+            do {
+                while (arr[i] < pivot) i++;
+                while (arr[j] > pivot) j--;
+                if (i <= j) {
+                    int aux = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = aux;
+                    i++;
+                    j--;
+                }
+            } while (i <= j);
+
+            if (low < j) quickSort(arr, low, j, index + 1);
+            if (i < high) quickSort(arr, i, high, index + 1);
+        }
     }
 
     public static void radixSort(int a[], int n){
@@ -113,11 +133,11 @@ public class Complex {
 
     }
     
-    public static void mergeSort(int a[], int tmp[], int low, int high){
+    public static void mergeSort(int a[], int tmp[], int low, int high, int index){
         if(low<high){
             int center = (low+high)/2;
-            mergeSort(a,tmp,low,center );
-            mergeSort(a,tmp,center+1,high);
+            mergeSort(a,tmp,low,center, index+1);
+            mergeSort(a,tmp,center+1,high, index+1);
             merge(a,tmp,low,center+1,high);
         }//if
     }

@@ -9,6 +9,8 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import util.Utility;
 
+import java.util.Arrays;
+
 public class SelectionSortingController
 {
     @javafx.fxml.FXML
@@ -36,12 +38,25 @@ public class SelectionSortingController
     @javafx.fxml.FXML
     private ScrollPane scrollPaneSA;
 
+    private int[] noSortedArray;
+    private int[] sortedArray;
+
     @javafx.fxml.FXML
     public void initialize() {
+
     }
 
     @javafx.fxml.FXML
     public void startOnAction(ActionEvent actionEvent) {
+        Elementary.selectionSort(sortedArray);
+
+        crearTV(sortedArrayTableView, sortedArray.length);
+        updateTV(sortedArrayTableView, sortedArray);
+
+        minValueTextField.setText(Arrays.toString(Elementary.getMinValueArray()));
+        maxValueTextField.setText(Arrays.toString(Elementary.getMinIndexArray()));
+        iterationTextField.setText(Elementary.getTotalIterations()+"");
+        changesTextField.setText(Elementary.getTotalChanges()+"");
     }
 
     @javafx.fxml.FXML
@@ -55,27 +70,17 @@ public class SelectionSortingController
         int lowBoundText = Integer.parseInt(lowBoundTextField.getText());
         int highBoundText = Integer.parseInt(highBoundTextField.getText());
 
-        int [] noSortedArray = Utility.createArray(lengthText,lowBoundText,highBoundText);
-        int [] sortedArray = Utility.copyArray(noSortedArray);
+        noSortedArray = Utility.createArray(lengthText,lowBoundText,highBoundText);
+        sortedArray = Utility.copyArray(noSortedArray);
 
         crearTV(noSortedArrayTableVIew, noSortedArray.length);
         updateTV(noSortedArrayTableVIew, noSortedArray);
-        Elementary.selectionSort(sortedArray);
 
-        crearTV(sortedArrayTableView, sortedArray.length);
-        updateTV(sortedArrayTableView, sortedArray);
-
-        minValueTextField.setText(sortedArray[0]+"");
-        maxValueTextField.setText(sortedArray[sortedArray.length-1]+"");
-        iterationTextField.setText(Elementary.getTotalIterations()+"");
-        changesTextField.setText(Elementary.getTotalChanges()+"");
-
-        mostrarAlerta("Valores ingresados correctamente");
-
+        mostrarAlerta("Arreglo ingresado","Valores ingresados correctamente");
     }
-    private static void mostrarAlerta(String mensaje) {
+    private static void mostrarAlerta(String Titulo, String mensaje) {
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-        alerta.setTitle("Error de validación");
+        alerta.setTitle(Titulo);
         alerta.setHeaderText(null);
         alerta.setContentText(mensaje);
         alerta.showAndWait();
@@ -92,6 +97,8 @@ public class SelectionSortingController
         changesTextField.clear();
         arrayLengthTextField.clear();
         maxValueTextField.clear();
+        lowBoundTextField.clear();
+        highBoundTextField.clear();
     }
 
     @javafx.fxml.FXML

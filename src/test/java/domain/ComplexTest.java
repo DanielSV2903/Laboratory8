@@ -11,13 +11,13 @@ class ComplexTest {
         int copyOf[]= Utility.copyArray(a);
         switch (algorithm){
             case "quickSort":
-                Complex.quickSort(a,0,a.length-1);
+                Complex.quickSort(a,0,a.length-1, a.length);
                 break;
             case "radixSort":
                 Complex.radixSort(a,n);
                 break;
             case "mergeSort":
-                Complex.mergeSort(a,new int[a.length],0,a.length-1);
+                Complex.mergeSort(a,new int[a.length],0,a.length-1, 0);
                 break;
             case "shellSort":
                 Complex.shellSort(a);

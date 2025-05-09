@@ -32,6 +32,17 @@ public class Elementary {
     private static int TotalIterations;
     private static int[] CounterArray;
 
+    private static int[] minValueArray;
+    private static int[] minIndexArray;
+
+    public static int[] getMinValueArray() {
+        return minValueArray;
+    }
+
+    public static int[] getMinIndexArray() {
+        return minIndexArray;
+    }
+
     public static int[] getCounterArray() {
         return CounterArray;
     }
@@ -74,9 +85,15 @@ public class Elementary {
     public static void selectionSort(int a[]){
         TotalIterations=0;
         TotalChanges=0;
+
+        minValueArray = new int[a.length];
+        minIndexArray = new int[a.length];
+
         for(int i=0;i<a.length-1;i++){
+
             int min=a[i];
             int minIndex=i;
+
             for(int j=i+1;j<a.length;j++){
                 if(a[j]<min){
                     min=a[j];
@@ -84,10 +101,21 @@ public class Elementary {
                     TotalChanges++;
                 }//if
             }//for j
-            a[minIndex]=a[i];
-            a[i]=min;
-            TotalIterations++;
+
+
+            minValueArray[i]=min;
+            minIndexArray[i]=minIndex;
+
+            if (minIndex != i){
+                int aux=a[i];
+                a[i]=a[minIndex];
+                a[minIndex]=aux;
+                TotalChanges++;
+            }
+
         }//for i
+        minValueArray[a.length-1]= a[a.length-1];
+        minIndexArray[a.length-1]= a.length-1;
     }
     
     public static void countingSort(int a[]) {
