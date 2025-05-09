@@ -98,7 +98,7 @@ public class CountingSortingController
         int highBoundText = Integer.parseInt(highBoundTextField.getText());
 
        noSortedArray= Utility.createArray(lengthText,lowBoundText,highBoundText);
-        sortedArray=Utility.copyArray(noSortedArray);
+       sortedArray=Utility.copyArray(noSortedArray);
         crearTV(noSortedArrayTableView, lengthText);
         updateTV(noSortedArrayTableView,noSortedArray);
             }else mostrarAlerta("Ingrese todos los valores");
