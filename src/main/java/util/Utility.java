@@ -1,11 +1,6 @@
 package util;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -13,14 +8,13 @@ import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
     public class Utility {
-        private static  Random random;
+        private static Random random;
 
         //constructor estatico, inicializador estatico
         static {
@@ -32,10 +26,10 @@ import java.util.Random;
             //return (int)Math.floor(Math.random()*bound); //forma 1
             return 1+random.nextInt(bound);
         }
-//        public static int random(int bound1,int bound2){
-//            //return (int)Math.floor(Math.random()*bound); //forma 1
-//            return 1+random.nextInt(bound1,bound2);
-//        }
+        public static int random(int bound1,int bound2){
+            //return (int)Math.floor(Math.random()*bound); //forma 1
+            return bound1 + random.nextInt(bound2 - bound1 + 1);
+        }
 
         public static void fill(int[] a) {
             for (int i = 0; i < a.length; i++) {
@@ -223,5 +217,14 @@ import java.util.Random;
             for (int i=0;i<length;i++)
                 copy[i]=a[i];
             return copy;
+        }
+
+        public static int[] createArray(String lengthText, String lowBoundText, String highBoundText) {
+            int[] array=new int[Integer.parseInt(lengthText)];
+            int length=array.length;
+            for (int j=0;j<length;j++){
+                array[j]=random(Integer.parseInt(lowBoundText),Integer.parseInt(highBoundText));
+            }
+            return array;
         }
     }
