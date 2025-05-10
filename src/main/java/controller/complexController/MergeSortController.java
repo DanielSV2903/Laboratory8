@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import util.Utility;
 
 import java.util.Arrays;
@@ -36,6 +37,8 @@ public class MergeSortController
     private int[] sortedArray;
     private int[] noSortedArray;
     private int[] tempArray;
+    @javafx.fxml.FXML
+    private BorderPane bp;
 
     @javafx.fxml.FXML
     public void initialize() {

@@ -10,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
+import javafx.scene.layout.BorderPane;
 import util.Utility;
 
 import java.util.Arrays;
@@ -33,6 +34,8 @@ public class BubbleSortController
 
     private int[] noSortedArray;
     private int[] sortedArray;
+    @FXML
+    private BorderPane bp;
 
 
     @FXML

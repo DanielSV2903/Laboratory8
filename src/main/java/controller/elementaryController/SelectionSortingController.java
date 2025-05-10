@@ -33,10 +33,6 @@ public class SelectionSortingController
     private TextField lowBoundTextField;
     @javafx.fxml.FXML
     private BorderPane bp;
-    @javafx.fxml.FXML
-    private ScrollPane scrollPaneNSA;
-    @javafx.fxml.FXML
-    private ScrollPane scrollPaneSA;
 
     private int[] noSortedArray;
     private int[] sortedArray;

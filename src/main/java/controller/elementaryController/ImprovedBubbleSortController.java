@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import util.Utility;
 
 import javafx.event.ActionEvent;
@@ -32,6 +33,8 @@ public class ImprovedBubbleSortController
 
     private int[] noSortedArray;
     private int[] sortedArray;
+    @FXML
+    private BorderPane bp;
 
     @javafx.fxml.FXML
     public void initialize() {

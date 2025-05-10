@@ -1,121 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.complexController.QuickSortController">
-   <children>
-      <Pane layoutY="-6.0" prefHeight="628.0" prefWidth="705.0" style="-fx-background-color: #abebc6;">
+<BorderPane fx:id="bp" prefHeight="620.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.complexController.QuickSortController">
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <Pane prefHeight="48.0" prefWidth="600.0" style="-fx-background-color: #e67e22;">
+            <Pane layoutY="-6.0" prefHeight="632.0" prefWidth="850.0" style="-fx-background-color: #abebc6;">
                <children>
-                  <Text layoutX="214.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quick Sort ALgorithm">
+                  <Pane prefHeight="48.0" prefWidth="850.0" style="-fx-background-color: #e67e22;">
+                     <children>
+                        <Text layoutX="339.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quick Sort ALgorithm">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Text layoutX="136.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Array Length:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="141.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(max 200)">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="arrayLengthTextField" layoutX="227.0" layoutY="54.0" prefHeight="42.0" prefWidth="94.0" />
+                  <Text layoutX="381.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Low Bound:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="379.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="High Bound:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="lowBoundTextField" layoutX="456.0" layoutY="54.0" prefHeight="25.0" prefWidth="72.0" />
+                  <TextField fx:id="highBoundTextField" layoutX="456.0" layoutY="80.0" prefHeight="19.0" prefWidth="72.0" />
+                  <Button layoutX="559.0" layoutY="53.0" mnemonicParsing="false" onAction="#createOnAction" prefHeight="42.0" prefWidth="155.0" text="Create">
                      <font>
                         <Font size="18.0" />
                      </font>
-                  </Text>
+                  </Button>
+                  <Pane layoutY="112.0" prefHeight="463.0" prefWidth="850.0" style="-fx-background-color: #85c1e9;">
+                     <children>
+                        <Text layoutX="345.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No Sorted Array">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="136.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Low:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="lowTextField" editable="false" layoutX="178.0" layoutY="141.0" />
+                        <Text layoutX="133.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="High:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="highTextFIeld" editable="false" layoutX="178.0" layoutY="173.0" />
+                        <Text layoutX="132.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pivot:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="pivotTextField" editable="false" layoutX="178.0" layoutY="204.0" />
+                        <Text layoutX="133.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recursive Calls:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="recursiveCallsTextFIeld" editable="false" layoutX="249.0" layoutY="236.0" />
+                        <Text layoutX="373.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sorted Array:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <TableView fx:id="noSortedArrayTableVIew" layoutX="130.0" layoutY="24.0" prefHeight="110.0" prefWidth="590.0" />
+                        <TableView fx:id="sortedArrayTableVIew" layoutX="132.0" layoutY="326.0" prefHeight="102.0" prefWidth="585.0" />
+                     </children>
+                  </Pane>
+                  <Button layoutX="379.0" layoutY="586.0" mnemonicParsing="false" onAction="#randomizeOnAction" text="Randomize">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="552.0" layoutY="586.0" mnemonicParsing="false" onAction="#clearOnAction" text="Clear">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="274.0" layoutY="586.0" mnemonicParsing="false" onAction="#startOnAction" text="Start">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
-            <Text layoutX="27.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Array Length:">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="44.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(max 200)">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <TextField fx:id="arrayLengthTextField" layoutX="130.0" layoutY="59.0" prefHeight="42.0" prefWidth="94.0" />
-            <Text layoutX="284.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Low Bound:">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text layoutX="282.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="High Bound:">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <TextField fx:id="lowBoundTextField" layoutX="359.0" layoutY="59.0" prefHeight="25.0" prefWidth="72.0" />
-            <TextField fx:id="highBoundTextField" layoutX="359.0" layoutY="85.0" prefHeight="19.0" prefWidth="72.0" />
-            <Button layoutX="462.0" layoutY="58.0" mnemonicParsing="false" onAction="#createOnAction" prefHeight="42.0" prefWidth="155.0" text="Create">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Pane layoutY="112.0" prefHeight="452.0" prefWidth="631.0" style="-fx-background-color: #85c1e9;">
-               <children>
-                  <Text layoutX="236.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No Sorted Array">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="27.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Low:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="lowTextField" editable="false" layoutX="69.0" layoutY="143.0" />
-                  <Text layoutX="24.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="High:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="highTextFIeld" editable="false" layoutX="69.0" layoutY="175.0" />
-                  <Text layoutX="23.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pivot:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="pivotTextField" editable="false" layoutX="69.0" layoutY="206.0" />
-                  <Text layoutX="24.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recursive Calls:">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="recursiveCallsTextFIeld" editable="false" layoutX="140.0" layoutY="238.0" />
-                  <Text layoutX="264.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sorted Array:">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <TableView fx:id="noSortedArrayTableVIew" layoutX="21.0" layoutY="26.0" prefHeight="110.0" prefWidth="590.0">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
-                    </columns>
-                  </TableView>
-                  <TableView fx:id="sortedArrayTableVIew" layoutX="23.0" layoutY="328.0" prefHeight="102.0" prefWidth="585.0">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
-                    </columns>
-                  </TableView>
-               </children>
-            </Pane>
-            <Button layoutX="226.0" layoutY="569.0" mnemonicParsing="false" onAction="#randomizeOnAction" text="Randomize">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="399.0" layoutY="569.0" mnemonicParsing="false" onAction="#clearOnAction" text="Clear">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Button layoutX="121.0" layoutY="569.0" mnemonicParsing="false" onAction="#startOnAction" text="Start">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
          </children>
-      </Pane>
-   </children>
-</AnchorPane>
+      </AnchorPane>
+   </center>
+</BorderPane>

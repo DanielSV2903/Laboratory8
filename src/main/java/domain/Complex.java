@@ -143,7 +143,6 @@ public class Complex {
         for (i = 0; i < n; i++) {
             count[(a[i] / exp) % 10]++;
         }
-
         // Change count[i] so that count[i] now contains
         // actual position of this digit in output[]
         for (i = 1; i < 10; i++) {
@@ -207,6 +206,7 @@ public class Complex {
         int x=0;
         // Start with a big gap, then reduce the gap
         for (int gap = n/2; gap > 0; gap /= 2){
+            gapValues.add(gap);
                 // Do a gapped insertion sort for this gap size.
             // The first gap elements a[0..gap-1] are already 
             // in gapped order keep adding one more element 

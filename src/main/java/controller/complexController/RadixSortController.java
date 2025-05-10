@@ -35,9 +35,13 @@ public class RadixSortController
 
     @javafx.fxml.FXML
     public void startOnAction(ActionEvent actionEvent) {
-        Complex.radixSort(sortedArray,50);
-        int[] copy=Utility.copyArray(sortedArray);
-        crearTV(sortedArrayTableView,50);
+        if (sortedArray.length<50){
+            Complex.radixSort(sortedArray,sortedArray.length);
+            crearTV(sortedArrayTableView,sortedArray.length);
+        }else{
+            Complex.radixSort(sortedArray,50);
+            crearTV(sortedArrayTableView,50);
+        }
         updateTV(sortedArrayTableView,sortedArray);
         int[] counter=Complex.getCounterRadix();
         crearTV(counterArrayTableView,counter.length);

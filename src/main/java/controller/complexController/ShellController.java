@@ -47,7 +47,6 @@ public class ShellController
 
     @javafx.fxml.FXML
     public void startOnAction(ActionEvent actionEvent) {
-        this.gapsN2TF.clear();
         String gaps = "";
         Complex.shellSort(sortedArray);
         gapValues = Complex.getGapValues();
