@@ -48,8 +48,6 @@ public class SelectionSortingController
 
     @javafx.fxml.FXML
     public void startOnAction(ActionEvent actionEvent) {
-        Elementary.selectionSort(sortedArray);
-
         crearTV(sortedArrayTableView, sortedArray.length);
         updateTV(sortedArrayTableView, sortedArray);
 
@@ -65,6 +63,13 @@ public class SelectionSortingController
             return;
         noSortedArrayTableVIew.getItems().clear();
         noSortedArrayTableVIew.getColumns().clear();
+        sortedArrayTableView.getItems().clear();
+        sortedArrayTableView.getColumns().clear();
+        iterationTextField.clear();
+        changesTextField.clear();
+        arrayLengthTextField.clear();
+        maxValueTextField.clear();
+        minValueTextField.clear();
 
         int lengthText = Integer.parseInt(arrayLengthTextField.getText());
         int lowBoundText = Integer.parseInt(lowBoundTextField.getText());
@@ -107,15 +112,23 @@ public class SelectionSortingController
         int lowBound = Utility.random(0, 50);
         int highBound = Utility.random(lowBound+1, 100);
 
-        int[] noSortedArray = Utility.createArray(arrayLength,lowBound,highBound);
-        int[] sortedArray = Utility.copyArray(noSortedArray);
+        noSortedArrayTableVIew.getItems().clear();
+        noSortedArrayTableVIew.getColumns().clear();
+        sortedArrayTableView.getItems().clear();
+        sortedArrayTableView.getColumns().clear();
+        iterationTextField.clear();
+        changesTextField.clear();
+        arrayLengthTextField.clear();
+        maxValueTextField.clear();
+        minValueTextField.clear();
+
+        noSortedArray = Utility.createArray(arrayLength,lowBound,highBound);
+        sortedArray = Utility.copyArray(noSortedArray);
 
         crearTV(noSortedArrayTableVIew, noSortedArray.length);
         updateTV(noSortedArrayTableVIew, noSortedArray);
-        Elementary.selectionSort(sortedArray);
 
-        crearTV(sortedArrayTableView, sortedArray.length);
-        updateTV(sortedArrayTableView, sortedArray);
+        Elementary.selectionSort(sortedArray);
     }
 
     private void crearTV(TableView<ObservableList<SimpleIntegerProperty>> tableView, int length) {

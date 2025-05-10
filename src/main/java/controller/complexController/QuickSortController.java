@@ -60,6 +60,12 @@ public class QuickSortController
 
         noSortedArrayTableVIew.getItems().clear();
         noSortedArrayTableVIew.getColumns().clear();
+        sortedArrayTableVIew.getItems().clear();
+        sortedArrayTableVIew.getColumns().clear();
+        recursiveCallsTextFIeld.clear();
+        pivotTextField.clear();
+        lowTextField.clear();
+        highTextFIeld.clear();
 
         int lengthText = Integer.parseInt(arrayLengthTextField.getText());
         int lowBoundText = Integer.parseInt(lowBoundTextField.getText());
@@ -108,6 +114,12 @@ public class QuickSortController
 
         noSortedArrayTableVIew.getItems().clear();
         noSortedArrayTableVIew.getColumns().clear();
+        sortedArrayTableVIew.getItems().clear();
+        sortedArrayTableVIew.getColumns().clear();
+        recursiveCallsTextFIeld.clear();
+        pivotTextField.clear();
+        lowTextField.clear();
+        highTextFIeld.clear();
 
         noSortedArray = Utility.createArray(lengthText,lowBoundText,highBoundText);
         sortedArray = Utility.copyArray(noSortedArray);

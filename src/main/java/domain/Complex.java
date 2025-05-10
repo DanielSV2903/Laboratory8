@@ -75,6 +75,7 @@ public class Complex {
             int pivot = arr[(low + high) / 2];
 
             pivotArray[pivotIndex] = pivot;
+            comprobadorTamanoArrays(arr,lowIndex,highIndex);
             lowArray[lowIndex] = low;
             highArray[highIndex] = high;
             RecursiveCount++;
@@ -86,10 +87,13 @@ public class Complex {
                 while (arr[j] > pivot) {
                     j--;
                 }
+
                 lowIndex++;
-                lowArray[lowIndex]=i;
                 highIndex++;
+                comprobadorTamanoArrays(arr,lowIndex,highIndex);
+                lowArray[lowIndex]=i;
                 highArray[highIndex]=j;
+
                 if (i <= j) {
                     int aux = arr[i];
                     arr[i] = arr[j];
@@ -101,6 +105,19 @@ public class Complex {
 
             if (low < j) quickSort(arr, low, j, pivotIndex + 1, lowIndex+1, highIndex+1);
             if (i < high) quickSort(arr, i, high, pivotIndex + 1, lowIndex+1, highIndex+1);
+        }
+    }
+    private static void comprobadorTamanoArrays(int arr[], int lowIndex, int highIndex){
+        int[] aux = null;
+        if (lowIndex==arr.length) {
+            aux = Utility.copyArray(lowArray);
+            lowArray=new int[aux.length+10];
+            for (int k=0;k<aux.length;k++) lowArray[k] = aux[k];
+        }
+        if (highIndex==arr.length) {
+            aux = Utility.copyArray(highArray);
+            highArray=new int[aux.length+10];
+            for (int k=0;k<aux.length;k++) highArray[k] = aux[k];
         }
     }
 

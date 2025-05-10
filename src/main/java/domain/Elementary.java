@@ -90,6 +90,7 @@ public class Elementary {
         minIndexArray = new int[a.length];
 
         for(int i=0;i<a.length-1;i++){
+            TotalIterations++;
 
             int min=a[i];
             int minIndex=i;

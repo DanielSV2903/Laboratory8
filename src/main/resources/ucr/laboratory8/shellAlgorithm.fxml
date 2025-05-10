@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -60,11 +59,6 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <ScrollPane layoutX="28.0" layoutY="24.0" prefHeight="103.0" prefWidth="738.0">
-                           <content>
-                              <TableView fx:id="noSortedArrayTableVIew" prefHeight="104.0" prefWidth="729.0" />
-                           </content>
-                        </ScrollPane>
                         <Text layoutX="105.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gap (n/2):">
                            <font>
                               <Font size="16.0" />
@@ -93,12 +87,9 @@
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <ScrollPane layoutX="63.0" layoutY="274.0" prefHeight="99.0" prefWidth="698.0">
-                           <content>
-                              <TableView fx:id="sortedArrayTableVIew" prefHeight="97.0" prefWidth="704.0" />
-                           </content>
-                        </ScrollPane>
                         <TextField fx:id="gapsN2TF" editable="false" layoutX="223.0" layoutY="132.0" prefHeight="25.0" prefWidth="461.0" />
+                        <TableView fx:id="noSortedArrayTableVIew" layoutX="27.0" layoutY="21.0" prefHeight="104.0" prefWidth="729.0" />
+                        <TableView fx:id="sortedArrayTableVIew" layoutX="39.0" layoutY="280.0" prefHeight="105.0" prefWidth="704.0" />
                      </children>
                   </Pane>
                   <Button layoutX="358.0" layoutY="544.0" mnemonicParsing="false" onAction="#randomizeOnAction" text="Randomize">

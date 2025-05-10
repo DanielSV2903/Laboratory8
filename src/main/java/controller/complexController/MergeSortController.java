@@ -61,6 +61,11 @@ public class MergeSortController
 
         noSortedArrayTableView.getItems().clear();
         noSortedArrayTableView.getColumns().clear();
+        sortedArrayTableView.getItems().clear();
+        sortedArrayTableView.getColumns().clear();
+        lowTextField.clear();
+        highTextField.clear();
+        recursiveCallsTextField.clear();
 
         int lengthText = Integer.parseInt(arrayLengthTextField.getText());
         int lowBoundText = Integer.parseInt(lowBoundTextField.getText());
@@ -111,6 +116,11 @@ public class MergeSortController
 
         noSortedArrayTableView.getItems().clear();
         noSortedArrayTableView.getColumns().clear();
+        sortedArrayTableView.getItems().clear();
+        sortedArrayTableView.getColumns().clear();
+        lowTextField.clear();
+        highTextField.clear();
+        recursiveCallsTextField.clear();
 
         noSortedArray = Utility.createArray(lengthText,lowBoundText,highBoundText);
         sortedArray = Utility.copyArray(noSortedArray);
